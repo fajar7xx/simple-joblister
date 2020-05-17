@@ -1,5 +1,6 @@
 <?php
 
+use App\Mail\NewUserWelcomeMail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('site.home');
+// });
+
+Route::get('/', 'SiteController@index');
+Route::get('job/{slug}', 'JobController@show')->name('job.show');
+
+
+// autentikasi
+Route::group(['middleware' => ['auth', 'verified']], function(){
+    Route::resource('profile', 'ProfileController');
+    Route::get('job', 'JobController@create')->name('job.create');
+    Route::post('job', 'JobController@store')->name('job.store');
+
+    Route::get('applyjob/{url}', 'ProposalController@create')->name('apply.job');
+    Route::post('applyjob', 'ProposalController@store')->name('apply.job.store');
+    Route::get('proposal/{id}', 'ProposalController@show')->name('proposal.show');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('email', function(){
+    return new NewUserWelcomeMail();
+});
+
+// Route::get('/home', 'HomeController@index')->name('home');
