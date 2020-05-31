@@ -40,7 +40,9 @@
                     @cannot('update', $detail)
                         <div class="card my-2">      
                             <div class="card-body">
-                            @if (Auth::id() == $detail->proposals->first()->user_id)
+                            {{-- @if (Auth::id() == $proposals->user->fisrt()->user_id) --}}
+                            {{-- {!! Auth::id() !!} --}}
+                            @if ($proposals->contains('user_id', Auth::id()))
                                 <span class="badge badge-success d-flex justify-content-center">You Have Been Applied</span>
                             @else
                                 <a href="{{ route('apply.job', $detail->url) }}" class="btn btn-block btn-sm btn-outline-success">Apply This Job</a>

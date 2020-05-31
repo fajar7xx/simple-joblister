@@ -50,7 +50,12 @@
                     <a href="{{ route('job.show', $job->url) }}" class="btn btn-sm btn-outline-success">See detail</a>
                 </div>
                 <div class="card-footer text-muted">
-                    2 days ago
+                    <div class="float-left">
+                      Category : {{ $job->category->name }}
+                    </div>
+                    <div class="float-right">
+                      Created At : {{ formatDate($job->created_at) }}
+                    </div>
                 </div>
             </div>
               @empty

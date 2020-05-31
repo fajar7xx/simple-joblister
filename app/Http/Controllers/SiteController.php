@@ -14,10 +14,17 @@ class SiteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $category = $request->category;
         $categories = Category::all();
-        $jobs = Job::where('status', 'open')->paginate(10);
+        if(isset($category)){
+            $jobs = Job::where('category_id', $category)
+                    ->where('status', 'open')    
+                    ->paginate(10);
+        }else{
+            $jobs = Job::where('status', 'open')->paginate(10);
+        }
         return view('site.home', [
             'categories' => $categories,
             'jobs' => $jobs,

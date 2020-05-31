@@ -84,7 +84,7 @@ class JobController extends Controller
         $detail = Job::where('url', $url)->first();
         $proposals = Proposal::where('job_id', $detail->id )->get();
         // dd($detail);
-        // dd($proposals);
+        // dd($proposals, $detail);
 
         return view('jobs.detail', [
             'detail' => $detail,
