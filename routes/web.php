@@ -17,9 +17,15 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('site.home');
 // });
+// admin test
+Route::get('/admin', 'Admin\DashboardController');
+
 
 Route::get('/', 'SiteController@index');
+Route::get('contact', 'ContactController@index')->name('contact.index');
+Route::post('contact', 'ContactController@store')->name('contact.store');
 Route::get('job/{slug}', 'JobController@show')->name('job.show');
+
 
 
 // autentikasi

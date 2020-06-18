@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "@ckeditor/ckeditor5-build-classic": "^19.0.0",
+        "ionicons": "^5.0.1",
         "select2": "^4.0.13"
     }
 }

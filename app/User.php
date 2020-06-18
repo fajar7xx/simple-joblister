@@ -55,7 +55,7 @@ class User extends Authenticatable implements MustVerifyEmail
             ]);
 
             // nanti aja deh buat untuk verifikasi emailnya
-            Mail::to($user->email)->send(new NewUserWelcomeMail());
+            // Mail::to($user->email)->send(new NewUserWelcomeMail());
         });
     }
 

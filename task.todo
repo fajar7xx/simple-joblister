@@ -2,6 +2,11 @@ apa yang di kerjakan :
     ✔ emmbuat tampilan frontpage @done (5/14/2020, 2:18:38 PM)
     ✔ pada tampilan select catgory pakai selct2js aja kali ya @done (5/14/2020, 2:18:09 PM)
     ☐ membuat tampilan profile nya
+    ☐ form contact us menggunakan ajax jquery
+    ☐ buat admin
+    ☐ ionicons
+
+
 
 bug: 
     ☐ rancang ulang database untuk bagian
@@ -11,11 +16,18 @@ bug:
 
 
 apa yang digunakan : 
-    ☐ laravel thinker
     ☐ https://ecosystem.laravel.io/
+    ☐ laravel thinker
     ☐ php artisan storage:link
     ☐ https://www.itsolutionstuff.com/post/laravel-6-create-custom-helper-functionexample.html
     ☐ https://laravel.com/docs/7.x/collections#method-contains
+    ☐ https://demo.themewagon.com/preview/free-bootstrap-4-html5-online-job-portal-website-template-jobboard
+    ☐ https://themewagon.com/themes/free-bootstrap-4-html5-job-board-website-template-job-board/
+    ☐ https://demo.themewagon.com/preview/free-bootstrap-4-html5-responsive-education-website-template-unicat
+    ☐ https://demo.themewagon.com/preview/free-bootstrap-4-html5-school-website-template-adward
+    ☐ https://demo.themewagon.com/preview/free-bootstrap-4-html5-multi-page-job-board-website-template-skillhunt
+    ☐ https://github.com/svenluijten/artisan-view
+    ☐ https://github.com/browner12/helpers
     
     
     

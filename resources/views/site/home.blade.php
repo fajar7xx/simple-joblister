@@ -43,7 +43,10 @@
           @forelse ($jobs as $job)
             <div class="card my-2">
               <div class="card-body">
-                    <h5 class="card-title">{{ $job->job_title }}</h5>
+                    <h5 class="card-title">
+                      <a href="{{ route('job.show', $job->url) }}" class="">
+                        {{ $job->job_title }}</h5>
+                      </a>
                     <span>{{ $job->company }}</span>
                     <hr>
                     <p class="card-text">{!! $job->shortDescription() !!}</p>

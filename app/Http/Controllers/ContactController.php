@@ -3,33 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
-use App\Job;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\ContactStoreRequest;
 
-class SiteController extends Controller
+class ContactController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $category = $request->category;
-        $categories = Category::all();
-        if(isset($category)){
-            $jobs = Job::where('category_id', $category)
-                    ->where('status', 'open')    
-                    ->paginate(10);
-        }else{
-            $jobs = Job::where('status', 'open')->paginate(10);
-        }
-        
-        return view('site.home', [
-            'categories' => $categories,
-            'jobs' => $jobs,
-        ]);
+        return view('site.contact');
     }
 
     /**
@@ -48,9 +34,11 @@ class SiteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactStoreRequest $request)
     {
-        //
+        $validate = $request->validated();
+
+        return "true";
     }
 
     /**

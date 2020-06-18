@@ -52,8 +52,11 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item {{ URL::current() == '/' ? 'active' : '' }}">
+                <li class="nav-item {{ Request::path() == '/'  ? 'active' : '' }}">
                     <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item {{ Route::currentRouteNamed('contact.index') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('contact.index') }}">Contact</a>
                 </li>
                 @auth
                 <div class="nav-item">
